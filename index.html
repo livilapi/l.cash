@@ -166,8 +166,12 @@
             <div class="dark-box"></div>
             <div class="content">
                 <h1 id="introduction">Introduction</h1>
-                    <p>Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.</p>
-                    <p>We have language bindings in Shell, Ruby, Python, and JavaScript! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.</p>
+                    <!-- 
+                        L.cash API에 오신것을 환영합니다! API를 사용하여 다양한 언어로 L.cash 결제 시스템을 사용 하시기 바랍니다. -> Welcome to the L.cash API! Please use the L.cash payment system in various languages using the API.
+                        Sell, Node, PHP 및 JavaScript 등 다양한 언어로 L.cash 결제 플랫폼을 사용할수 있습니다. 오른쪽 영역에서 데모 코드 예제를 볼수 있으며 상단의 탭으로 프로그래밍 언어를 전환 할수 있습니다. -> You can use the L.cash payment platform in various languages such as Sell, Node, PHP and JavaScript. You can see demo code examples in the area on the right and you can switch programming languages with the tabs at the top.
+                    -->
+                    <p>Welcome to the L.cash API! You can use the L.cash payment system in various languages using the API.</p>
+                    <p>You can use the L.cash payment platform in various languages such as Sell, Node, PHP and JavaScript. You can see demo code examples in the area on the right and you can switch programming languages with the tabs at the top.</p>
                     <p>1. The interface adopts UTF-8 character set encoding.</p>
                     <p>2. The interface adopts https protocol</p>
                     <p>3. The interface access frequency is limited to background configuration.</p>
@@ -617,12 +621,12 @@ request.post({
                 </div>
 
                 <h3 id="http-Host">HOST Request</h3>
-                <p><code>HOST https://openapi.l.cash/</code></p>
+                <p><code>HOST http://47.241.221.172:8107/</code></p>
                 <h3 id="http-HTTP">HTTP Request</h3>
-                <p><code>POST /pay/order/create</code></p>
+                <p><code>POST order/create</code></p>
                 <h3 id="Sample-signature">Sample signature</h3>
-                <p><code>appKey: kpecb34edd45cf4d2bb42229aac78f66c5</code></p>
-                <p><code>appSecret: sbf54f0ae60704c69859b028c5cdb1fbd</code></p>
+                <p><code>appKey: MK248622</code></p>
+                <p><code>appSecret: l8xvzen5v88wo80serkvxv3f2</code></p>
                 <h3 id="query-parameters">Request header</h3>
                 <table>
                     <thead>
@@ -637,7 +641,7 @@ request.post({
                         <tr>
                             <td>Content-Type</td>
                             <td>String</td>
-                            <td>application/json</td>
+                            <td>application/json;charset=utf8</td>
                         </tr>
                   
                         <tr>
@@ -659,17 +663,17 @@ request.post({
                     </thead>
                     
                     <tbody>
-                        <tr>
+                        <!-- <tr>
                             <td>createType</td>
                             <td>Integer(*)</td>
                             <td>Create order type (1: Fiat currency payment (fiat currency type and payment amount are required) 2: Limited payment currency (currency ID, payment quantity is required) 3: Limited receipt currency (receiving currency set in the merchant background, payment amount Required))</td>
-                        </tr>
+                        </tr> -->
 
-                        <tr>
+                        <!-- <tr>
                             <td>currencyType</td>
                             <td>Integer</td>
                             <td>Type of legal currency (1: CNY, 2: USD 3: KRW)</td>
-                        </tr>
+                        </tr> -->
 
                         <tr>
                             <td>amount</td>
@@ -677,21 +681,21 @@ request.post({
                             <td>Fiat currency payment amount</td>
                         </tr>
 
-                        <tr>
+                        <!-- <tr>
                             <td>coinId</td>
                             <td>Integer</td>
                             <td>Currency ID(Get the <a href="#">currency list</a> of the payment currency.)</td>
-                        </tr>
+                        </tr> -->
 
-                        <tr>
+                        <!-- <tr>
                             <td>coinNum</td>
                             <td>Float</td>
                             <td>Number of currencies</td>
 
-                        </tr>
+                        </tr> -->
 
                         <tr>
-                            <td>merchantOrderNum</td>
+                            <td>merchantOrderNo</td>
                             <td>String(*)</td>
                             <td>Merchant order number（unique）</td>
                         </tr>
