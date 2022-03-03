@@ -216,7 +216,7 @@ var sign = md5("AMOUNT=10000&<br>APPKEY=MK24****&<br>GOODSNAME=test&<br>MERCHANT
                     </div>
 
                     <blockquote><p>You need to replace the <code>APP KEY and APP SECRET</code> here.</p></blockquote>
-                    <p>livilpay uses API keys to allow access to the API. You can register a new livilpay API key at our <a href="https://dashboard.l.cash/">developer portal</a>.</p>
+                    <p>L.cash uses API keys to allow access to APIs. You can get a new API key from the <a href="https://dashboard.l.cash/">developer portal</a>.</p>
                     <p>Request signature, all parameter pairs are sorted in ascending order by dictionary (abcd ...), and the secret assigned by the platform is the key. First, all parameters except the signature itself need to be added in the format "KEY = value" and use the character "&". Add the exact order of the request, then use md5 to encrypt the generated string and then lowercase it. Note: The sign parameter does not participate in the signature; the null parameter does not participate in the signature.</p>
 
                     <aside class="notice">Please refer to the code</aside>
