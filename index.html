@@ -3,7 +3,7 @@
         <meta charset="utf-8">
         <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-        <title>livilpay API docs</title>
+        <title>L.cash API docs</title>
         <style media="screen">
             .highlight table td { padding: 5px; }
             .highlight table pre { margin: 0; }
@@ -120,12 +120,11 @@
         </a>
   
         <div class="toc-wrapper">
-            <h5 style="color:#fff">livilapi</h5>
+            <h5 style="color:#fff">L.cash api</h5>
             <div class="lang-selector">
-                <a href="#" data-language-name="shell" class="active">Node</a>
-                <a href="#" data-language-name="ruby">PHP</a>
-                <a href="#" data-language-name="python">python</a>
-                <a href="#" data-language-name="javascript">javascript</a>
+                <a href="#" data-language-name="shell" class="active">Shell</a>
+                <a href="#" data-language-name="ruby">Node</a>
+                <a href="#" data-language-name="python">PHP</a>
             </div>
 
             <div class="search">
@@ -172,6 +171,27 @@
                     <p>2. The interface adopts https protocol</p>
                     <p>3. The interface access frequency is limited to background configuration.</p>
                     <h1 id="authentication">Authentication</h1>
+
+                    <div class="highlight" id="shell_top_id">
+                        <pre class="highlight shell tab-shell">
+                            <div class="copy-clipboard">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                    <title>echo -n 'AMOUNT=10000&APPKEY=MK24****&GOODSNAME=test&MERCHANTORDERNO=157411452114&TS=157411452114&APPSECRET=l8xvzen5v88wo80se****'|md5sum|cut -d ' ' -f1</title>
+                                    <path d="M18 6v-6h-18v18h6v6h18v-18h-6zm-12 10h-4v-14h14v4h-10v10zm16 6h-14v-14h14v14z"></path>
+                                </svg>
+                            </div>
+
+                            <code>
+                                <span class="c">
+MD5 Encrypt Variables
+                                </span>
+                                <span class="s2"></span> <span class="se"></span>
+                                <span class="nt"></span> <span class="s2">
+echo -n 'AMOUNT=10000&<br>APPKEY=MK24****&<br>GOODSNAME=test&<br>MERCHANTORDERNO=157411452114&<br>TS=157411452114&<br>APPSECRET=l8xvzen5v88wo80se****'|md5sum|cut -d ' ' -f1
+                                </span>
+                            </code>
+                        </pre>
+                    </div>
                     
                     <div class="highlight" id="php_top_id" style="display: none;">
                       <pre class="highlight shell tab-shell">
@@ -194,7 +214,7 @@ $sign = md5("AMOUNT=10000&<br>APPKEY=MK24****&<br>GOODSNAME=test&<br>MERCHANTORD
                       </pre>
                   </div>
 
-                    <div class="highlight" id="node_top_id">
+                    <div class="highlight" id="node_top_id" style="display: none;">
                         <pre class="highlight shell tab-shell">
                             <div class="copy-clipboard">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -221,6 +241,48 @@ var sign = md5("AMOUNT=10000&<br>APPKEY=MK24****&<br>GOODSNAME=test&<br>MERCHANT
 
                     <aside class="notice">Please refer to the code</aside>
                     <h1 id="Interface_Description">Interface Description</h1>
+
+                    <div class="highlight"  id="shell_body_id"><pre class="highlight shell tab-shell">
+                        <div class="copy-clipboard">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <title>
+curl --location --request POST 'https://openapi.payurl.app/pay/order/create \
+--header 'Content-Type: application/json' \
+--header 'Accept-Language: en-US,en;q=0.1' \
+--data-raw '{
+    "amount": "10000",
+    "appKey": "MK24****",
+    "goodsName": "test",
+    "merchantOrderNo": "157411452114",
+    "sign": "kpecb34edd45cf4d2bb42229aac78f66c5",
+    "ts": 1622641306
+}'
+                                </title>
+                                <path d="M18 6v-6h-18v18h6v6h18v-18h-6zm-12 10h-4v-14h14v4h-10v10zm16 6h-14v-14h14v14z"></path>
+                            </svg>
+                        </div>
+                        
+                        <code>
+                            <span class="s2"></span> <span class="se">
+                            </span>
+                            <span class="nt"></span>
+                            <span class="s2">
+var sign = md5("AMOUNT=10000&APPKEY=MK24****&GOODSNAME=test&MERCHANTORDERNO=157411452114&TS=157411452114&APPSECRET=l8xvzen5v88wo80s*******");
+curl --location --request POST 'https://openapi.payurl.app/pay/order/create \
+--header 'Content-Type: application/json' \
+--header 'Accept-Language: en-US,en;q=0.1' \
+--data-raw '{
+    "amount": "10000",
+    "appKey": "MK24****",
+    "goodsName": "test",
+    "merchantOrderNo": "157411452114",
+    "sign": "kpecb34edd45cf4d2bb42229aac78f66c5",
+    "ts": 1622641306
+}'
+                            </span>
+                        </code>
+                    </pre>
+                    </div>
                     
                     <div class="highlight"  id="php_body_id" style="display: none;"><pre class="highlight shell tab-shell">
                       <div class="copy-clipboard">
@@ -303,7 +365,7 @@ echo $return_data;
                     </pre>
                     </div>
 
-                    <div class="highlight"  id="node_body_id"><pre class="highlight shell tab-shell">
+                    <div class="highlight"  id="node_body_id" style="display: none;"><pre class="highlight shell tab-shell">
                         <div class="copy-clipboard">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                                 <title>
@@ -612,32 +674,58 @@ request.post({
 
               <div class="dark-box">
                   <div class="lang-selector" style="width: 645.5px;">
-                      <a href="#" data-language-name="shell" class="active" onclick=ckckck(1);>Node</a>
-                      <a href="#" data-language-name="ruby" onclick=ckckck(2);>PHP</a>
-                      <a href="#" data-language-name="python" onclick=ckckck(3);>python</a>
-                      <a href="#" data-language-name="javascript" onclick=ckckck(1);>javascript</a>
+                      <a href="#" data-language-name="shell" class="active" onclick=ckckck(0);>Shell</a>
+                      <a href="#" data-language-name="ruby" onclick=ckckck(1);>Node</a>
+                      <a href="#" data-language-name="python" onclick=ckckck(2);>PHP</a>
+                      <!-- <a href="#" data-language-name="javascript" onclick=ckckck(1);>javascript</a> -->
                   </div>
               </div>
           </div>
       </body>
 </html>
 
+<!-- <span class="nt">echo -n</span> <span class="s2">'AMOUNT=100&APPKEY=kpecb34edd45cf4d2bb42229aac78f66c5&COINID=1&COINNUM=1&CREATETYPE=1&CURRENCYTYPE=1&GOODSNAME=test&MERCHANTORDERNUM=1002&TS=1625560941848&APPSECRET=sbf54f0ae60704c69859b028c5cdb1fbd'|md5sum|cut -d ' ' -f1</span> -->
+
+
+<!-- curl --location --request POST 'https://openapi.payurl.app/pay/order/create \
+--header 'Content-Type: application/json' \
+--header 'Accept-Language: en-US,en;q=0.1' \
+--data-raw '{
+    "coinId": "7",
+    "coinConfigType": "3",
+    "coinNum": "0.00001",
+    "sign": "kpecb34edd45cf4d2bb42229aac78f66c5",
+    "appKey": "kp252fb32ddxxxx",
+    "merchantOrderNum": "6-1622641306574",
+    "goodsName": "test11",
+    "ts": 1622641306
+}'   -->
+
+
 <script>
     function ckckck(result){
         if(result == 1){
             $("#node_top_id").css("display","block");
             $("#node_body_id").css("display","block");
-
+            $("#shell_top_id").css("display","none");
+            $("#shell_body_id").css("display","none");
             $("#php_top_id").css("display","none");
             $("#php_body_id").css("display","none");
         }else if(result == 2){
             $("#node_top_id").css("display","none");
             $("#node_body_id").css("display","none");
+            $("#shell_top_id").css("display","none");
+            $("#shell_body_id").css("display","none");
 
             $("#php_top_id").css("display","block");
             $("#php_body_id").css("display","block");
-        }else if(result == 3){
-
+        }else if(result == 0){
+            $("#node_top_id").css("display","none");
+            $("#node_body_id").css("display","none");
+            $("#shell_top_id").css("display","block");
+            $("#shell_body_id").css("display","block");
+            $("#php_top_id").css("display","none");
+            $("#php_body_id").css("display","none");
         }
         
     }
